@@ -106,6 +106,7 @@ body, html {
 
 #game {
     height: 100%;
+    background-color: #e6e3e3;
 }
 
 .game-info {
@@ -126,14 +127,14 @@ body, html {
 }
 
 .viorel-workspace {
-    height: 240px;
+    height: 140px;
 }
 .user-name {
     text-align: center;
     padding-top: 5px;
     margin: 10px;
     font-size: 22px;
-    color: #82d2ed;
+    color: #4484ab;
     font-weight: bold;
 }
 
@@ -145,33 +146,31 @@ hr {
 
 #your-choice {
     position: relative;
-    left: 20px;
+    left: 90px;
     top: 100px;
 }
 
 #your-choice button {
     border: none;
-    width: 90px;
-    height: 23px;
+    padding: 10px;
+    width: 150px;
+    height: 45px;
     font-size: 12px;
     background-color: #dbd1de;
     color: #424242;
     font-weight: bold;
-}
-
-.result {
-    font-size: 22px;
     text-align: center;
-    color: #5a8c5b;
+    display: block;
+    font-size: 22px;
 }
 
 #finalGame {
     display: none;
     height: 100%;
+    background-color:  #e6e3e3;
 }
 
 #resultGame {
-    margin-top: 50px;
     padding: 25px;
     text-align: center;
     font-size: 30px;
@@ -212,11 +211,10 @@ hr {
 }
 
 #viorel-result {
-    top: 105px;
-    left: 110px; 
+    top: 125px;
+    left: 70px; 
 }
 
 #finalGame span {
-    font-size: 24px;
     position: relative;
 }

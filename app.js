@@ -6,8 +6,8 @@ start.addEventListener("click", function () {
 });
 
 document.getElementById("intro").style.display = "none";
-document.getElementById("game").style.display = "none";
-let viorelResult = document.getElementById("viorel-choice");
+document.getElementById("game").style.display = "block";
+let viorelResult = document.getElementById("viorel-result");
 
 playViorel = () => {
     let choice = Math.floor(Math.random() * 3);
@@ -29,21 +29,20 @@ let rock = document.getElementById("rock-btn"),
     paper = document.getElementById("paper-btn"),
     scissor = document.getElementById("scissor-btn");
 
-    let finalGame = document.getElementById("finalGame");
+let finalGame = document.getElementById("finalGame");
 
 let result = document.getElementById("other-result");
 let game = document.getElementById("game");
 
 resetGame = () => {
-    rock.style.backgroundColor = "";
-    rock.style.color = "";
-    paper.style.backgroundColor = "";
-    paper.style.color = "";
-    scissor.style.backgroundColor = "";
-    scissor.style.color = "";
     finalGame.style.display = "none";
     game.style.display = "block";
 }
+
+let reset = document.getElementById("reset");
+reset.addEventListener("click", function () {
+    resetGame();
+});
 
 let message = document.getElementById("resultGame");
 
@@ -54,17 +53,27 @@ prepareResult = () => {
 
 otherWin = () => {
     prepareResult();
-    message.innerHTML = 'your win';
+    viorelResult.style.color = "#a85d5d"; //red
+    result.style.color = "#5da87b"; //green
+    message.style.color = "#5da87b";
+    message.innerHTML = 'You win!';
+    
 };
 
 viorelWin = () => {
     prepareResult();
-    message.innerHTML = 'Viorel win';
+    message.style.color = "#a85d5d";
+    result.style.color = "#a85d5d";
+    viorelResult.style.color = "#5da87b";
+    message.innerHTML = 'You lose!';
 };
 
 draw = () => {
     prepareResult();
-    message.innerHTML = 'it is draw';
+    message.style.color = "#8c918f";
+    viorelResult.style.color = "#8c918f";
+    result.style.color = "#8c918f";
+    message.innerHTML = 'It\'s a draw';
 };
 
 resultGame = (player, viorel) => {
@@ -96,24 +105,18 @@ resultGame = (player, viorel) => {
 }
 
 rock.addEventListener("click", function () {
-    result.innerHTML = 'Rock';
     resultGame('rock', playViorel());
-    rock.style.backgroundColor = "#a09ead";
-    rock.style.color = "#fff";
+    result.innerHTML = 'Rock';
 });
 
 paper.addEventListener("click", function () {
-    result.innerHTML = 'Paper';
     resultGame('paper', playViorel());
-    paper.style.backgroundColor = "#a09ead";
-    paper.style.color = "#fff";
+    result.innerHTML = 'Paper';
 });
 
 scissor.addEventListener("click", function () {
-    result.innerHTML = 'Scissors';
     resultGame('scissors', playViorel());
-    scissor.style.backgroundColor = "#a09ead";
-    scissor.style.color = "#fff";
+    result.innerHTML = 'Scissors';
 });
 
 
