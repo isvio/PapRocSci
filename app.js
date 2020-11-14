@@ -1,5 +1,7 @@
-/* let start = document.getElementById("start");
+document.addEventListener("DOMContentLoaded", function () {
+    let start = document.getElementById("start");
 
-start.addEventListener("click", function() {
-
-}); */
+    start.addEventListener("click", function () {
+        document.getElementById("intro").style.display = "none";
+    });
+});

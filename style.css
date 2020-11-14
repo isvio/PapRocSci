@@ -32,7 +32,7 @@ body, html {
     height: 100%;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 350px) {
     .game {
         width: 350px;
         margin: auto;
@@ -41,7 +41,7 @@ body, html {
 
 /* === header, intro style === */
 
-.intro {
+#intro {
     height: 100%;
     background-image: url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=655&q=80");
     background-size: cover;
@@ -49,9 +49,9 @@ body, html {
     background-repeat: no-repeat;
 }
 
-.intro h1 {
-    padding-top: 15px;
-    font-size: 32px;
+#intro h1 {
+    padding-top: 18px;
+    font-size: 34px;
     text-align: center;
     color: #fff;
     height: 15%;
@@ -64,8 +64,8 @@ body, html {
 .text-vs {
     position: relative;
     left: 160px;
-    font-size: 28px;
-    top: -70px;
+    font-size: 30px;
+    top: -80px;
     color: #fff;
 }
 
@@ -84,22 +84,22 @@ body, html {
 }
 
 .avatar {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     position: relative;
     opacity: 0.6;
 }
 
 #other {
-    border: 1px solid red;
+    border: 3px solid rgb(122, 110, 110);
     left: 30px;
     top: 45px;
 }
 
 #viorel {
     top: 80px;
-    left: 160px;
+    left: 130px;
 }
 
 main {
