@@ -5,7 +5,8 @@ start.addEventListener("click", function () {
     document.getElementById("intro").style.display = "none";
 });
 
-let viorelResult = document.getElementById("viorel-result");
+let viorelResult = document.getElementById("viorel-result"),
+    result = document.getElementById("other-result");
 
 playViorel = () => {
     let choice = Math.floor(Math.random() * 3);
@@ -23,15 +24,9 @@ playViorel = () => {
     return result;
 }
 
-let rock = document.getElementById("rock-btn"),
-    paper = document.getElementById("paper-btn"),
-    scissor = document.getElementById("scissor-btn");
 
 let finalGame = document.getElementById("finalGame");
-
-let result = document.getElementById("other-result");
 let game = document.getElementById("game");
-
 
 document.getElementById("reset").addEventListener("click", function () {
     finalGame.style.display = "none";
@@ -97,6 +92,10 @@ resultGame = (player, viorel) => {
         }
     }
 }
+
+let rock = document.getElementById("rock-btn"),
+    paper = document.getElementById("paper-btn"),
+    scissor = document.getElementById("scissor-btn");
 
 rock.addEventListener("click", function () {
     resultGame('rock', playViorel());
