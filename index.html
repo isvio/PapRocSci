@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <div class="game">
+    <div class="container">
         <div id="intro">
             <h1>Rock paper scissors</h1>
             <div class="players">
-                <img src="https://i.ibb.co/BLzTTc0/Untitled.png" class="avatar" id="other" alt="you"><br>
+                <img src="https://i.ibb.co/BLzTTc0/Untitled.png" class="avatar other" alt="you"><br>
                 <span class="text-vs">vs</span>
                 <img src="https://api.sololearn.com/Uploads/Avatars/5322116.jpg" class="avatar" id="viorel"
                     alt="viorel">
@@ -23,23 +23,44 @@
                 <button id="start">Start</button>
             </div>
         </div>
-        <!--  <main>
-                <div class="game-info">
-                    <img src="https://api.sololearn.com/Uploads/Avatars/5322116.jpg" class="vio-play" alt="viorel">
-                </div>
-                <div class="viorel-workspace"></div>
-                <hr>
-                <div class="your-worspace"></div>
-            </main>
-            <div class="result" id="win">
-                <h1>You win</h1>
-                <img src="" alt="win">
+        <div id="game">
+            <div class="game-info">
+                <img src="https://api.sololearn.com/Uploads/Avatars/5322116.jpg" class="avatar-play" id="vio-play"
+                    alt="viorel">
+                <img src="https://i.ibb.co/BLzTTc0/Untitled.png" class="avatar-play" id="other-play" alt="other">
             </div>
-            <div class="result" id="lose">
-                <h1>You lose!</h1>
-            </div> -->
-    </div>
+            <div class="viorel-workspace">
+                <h1 class="user-name">Viorel</h1><br>
+                <p id="viorel-choice" class="result"></p>
+            </div>
+            <hr>
+            <div class="your-worspace">
+                <h1 class="user-name">Your choice:</h1><br>
+                <p id="other-result" class="result">....</p>
+                <div id="your-choice">
+                    <button id="rock-btn">Rock</button>
+                    <button id="paper-btn">Paper</button>
+                    <button id="scissor-btn">Scissor</button>
+                </div>
+            </div>
+        </div>
 
+
+        <div id="finalGame">
+            <h1 id="resultGame">You win</h1><br>
+         
+
+                <img src="https://i.ibb.co/BLzTTc0/Untitled.png" alt="you" class="avatar other" id="leftAvatar"><span
+                    id="other-result">Scissors</span>
+                <img src="https://api.sololearn.com/Uploads/Avatars/5322116.jpg" alt="viorel" class="avatar"
+                    id="rightAvatar"><span id="viorel-result">Scissors</span><br>
+                    <button id="reset">New game</button>
+        </div>
+
+
+        
+    </div>
+    </div>
     <script src="app.js"></script>
 </body>
 
