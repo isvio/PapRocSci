@@ -28,12 +28,12 @@ body, html {
     font-family: sans-serif;
 }
 
-.game {
+.container {
     height: 100%;
 }
 
 @media (min-width: 350px) {
-    .game {
+    .container {
         width: 350px;
         margin: auto;
     }
@@ -84,14 +84,14 @@ body, html {
 }
 
 .avatar {
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     position: relative;
     opacity: 0.6;
 }
 
-#other {
+.other {
     border: 3px solid rgb(122, 110, 110);
     left: 30px;
     top: 45px;
@@ -102,10 +102,119 @@ body, html {
     left: 130px;
 }
 
-main {
+/* === game workspace === */
+
+#game {
     height: 100%;
+    background-color: #e6e3e3;
 }
 
-.result {
+.game-info {
+    background-color: rgb(220, 216, 224);
+}
+
+.avatar-play {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+#other-play {
+    position: relative;
+    border: 1px solid #fff;
+    float: right;
+}
+
+.viorel-workspace {
+    height: 140px;
+}
+.user-name {
+    text-align: center;
+    padding-top: 5px;
+    margin: 10px;
+    font-size: 22px;
+    color: #4484ab;
+    font-weight: bold;
+}
+
+hr {
+    width: 80%;
+    background-color: rgb(220, 216, 224);
+    opacity: 0.6;
+}
+
+#your-choice {
+    position: relative;
+    left: 90px;
+    top: 100px;
+}
+
+#your-choice button {
+    border: none;
+    padding: 10px;
+    width: 150px;
+    height: 45px;
+    font-size: 12px;
+    background-color: #dbd1de;
+    color: #424242;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    font-size: 22px;
+}
+
+#finalGame {
+    display: none;
     height: 100%;
-} 
+    background-color:  #e6e3e3;
+}
+
+#resultGame {
+    padding: 25px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#reset {
+    position: relative;
+    top: 100px;
+    left: -15px;
+    width: 180px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: #bd978f;
+    color: #fff;
+    font-weight: bold;
+}
+
+#leftAvatar {
+    float: left;
+    top: 5px;
+    top: 10px;
+}
+
+#finalGameLeftAvatar p{
+    text-align: center;
+}
+
+#rightAvatar {
+    float: right;
+    top: 10px;
+    right: 40px;
+}
+
+#other-result {
+    top: 130px;
+    left: -75px;
+}
+
+#viorel-result {
+    top: 125px;
+    left: 70px; 
+}
+
+#finalGame span {
+    position: relative;
+}
