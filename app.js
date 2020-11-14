@@ -1,5 +1,5 @@
-let start = document.getElementById("start");
+/* let start = document.getElementById("start");
 
 start.addEventListener("click", function() {
 
-});
+}); */
