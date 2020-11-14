@@ -5,8 +5,6 @@ start.addEventListener("click", function () {
     document.getElementById("intro").style.display = "none";
 });
 
-document.getElementById("intro").style.display = "none";
-document.getElementById("game").style.display = "block";
 let viorelResult = document.getElementById("viorel-result");
 
 playViorel = () => {
@@ -34,14 +32,10 @@ let finalGame = document.getElementById("finalGame");
 let result = document.getElementById("other-result");
 let game = document.getElementById("game");
 
-resetGame = () => {
+
+document.getElementById("reset").addEventListener("click", function () {
     finalGame.style.display = "none";
     game.style.display = "block";
-}
-
-let reset = document.getElementById("reset");
-reset.addEventListener("click", function () {
-    resetGame();
 });
 
 let message = document.getElementById("resultGame");
@@ -57,7 +51,7 @@ otherWin = () => {
     result.style.color = "#5da87b"; //green
     message.style.color = "#5da87b";
     message.innerHTML = 'You win!';
-    
+
 };
 
 viorelWin = () => {
@@ -119,7 +113,5 @@ scissor.addEventListener("click", function () {
     result.innerHTML = 'Scissors';
 });
 
-
-finalGame.style.display = "block";
 
 

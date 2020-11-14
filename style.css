@@ -26,6 +26,7 @@ time, mark, audio, video {
 body, html {
     height: 100%;
     font-family: sans-serif;
+    overflow: hidden;
 }
 
 .container {
@@ -37,6 +38,10 @@ body, html {
         width: 350px;
         margin: auto;
     }
+}
+
+.hidden {
+    display: none;
 }
 
 /* === header, intro style === */
@@ -70,14 +75,13 @@ body, html {
 }
 
 #start {
-    margin-top: 20px;
     position: relative;
     width: 60%;
-    height: 35px;
+    height: 32px;
     left: 20%;
     color: #fff;
-    font-size: 24px;
-    background-color: #50bfde;
+    font-size: 22px;
+    background-color:#688ba1;
     border: none;
     border-radius: 35px;
     cursor: pointer;
@@ -165,7 +169,6 @@ hr {
 }
 
 #finalGame {
-    display: none;
     height: 100%;
     background-color:  #e6e3e3;
 }
