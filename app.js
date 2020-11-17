@@ -8,6 +8,22 @@ document.addEventListener("DOMContentLoaded", function () {
     let viorelResult = document.getElementById("viorel-result"),
         result = document.getElementById("other-result");
 
+    let viorelScore = 0, otherScore = 0, coffee = 3;
+
+    let newGame = document.getElementById("new");
+    newGame.addEventListener("click", function () {
+        gameOver.style.display = "none";
+        game.style.display = "block";
+        document.getElementById("viorel-score").innerHTML = '0';
+        document.getElementById("other-score").innerHTML = '0';
+        viorelScore = 0;
+        otherScore = 0;
+        coffee = 3;
+        for (let coup = 1; coup <= 3; coup++) {
+            document.getElementById(coup).style.display = "inline-block";
+        }
+    });
+
     playViorel = () => {
         let choice = Math.floor(Math.random() * 3);
         let result = '';
@@ -24,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return result;
     }
 
-
+    let gameOver = document.getElementById("game-over");
     let finalGame = document.getElementById("finalGame");
     let game = document.getElementById("game");
 
@@ -40,17 +56,46 @@ document.addEventListener("DOMContentLoaded", function () {
         finalGame.style.display = "block"
     }
 
+    let otherScorePlace = document.getElementById("other-score"),
+        viorelScorePlace = document.getElementById("viorel-score");
+
+    gameOverDispplay = () => {
+        finalGame.style.display = "none";
+        document.getElementById("game-over").style.display = "block";
+    }
+
     otherWin = () => {
         prepareResult();
+        otherScore++;
+        otherScorePlace.innerHTML = otherScore;
+        if (otherScore === 3) {
+            gameOverDispplay();
+            document.getElementById("message-final").innerHTML = 'You win the game!'
+            document.getElementById("message-final-details").innerHTML = 'You are very lucky';
+            document.getElementById("img-final").innerHTML = '😍';
+        }
         viorelResult.style.color = "#a85d5d"; //red
         result.style.color = "#5da87b"; //green
         message.style.color = "#5da87b";
         message.innerHTML = 'You win!';
-
     };
+
+
+    drinkcCoffee = (coup) => {
+        if (coup === 1) {
+            gameOverDispplay();
+            document.getElementById("score-final").innerHTML = otherScore;
+            console.log(otherScore);
+        }
+        document.getElementById(coup).style.display = "none";
+    }
+
 
     viorelWin = () => {
         prepareResult();
+        viorelScore++;
+        drinkcCoffee(coffee--);
+        viorelScorePlace.innerHTML = viorelScore;
         message.style.color = "#a85d5d";
         result.style.color = "#a85d5d";
         viorelResult.style.color = "#5da87b";
@@ -111,6 +156,10 @@ document.addEventListener("DOMContentLoaded", function () {
         resultGame('scissors', playViorel());
         result.innerHTML = 'Scissors';
     });
+
+
 });
+
+
 
 

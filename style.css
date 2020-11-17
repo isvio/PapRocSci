@@ -93,7 +93,7 @@ body, html {
     height: 100px;
     border-radius: 50%;
     position: relative;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .other {
@@ -111,11 +111,33 @@ body, html {
 
 #game {
     height: 100%;
-    background-color: #e6e3e3;
+    background-color: #eeeeee;
 }
 
 .game-info {
     background-color: rgb(220, 216, 224);
+}
+
+.game-info span {
+    font-size: 18px;
+    position: relative;
+    bottom: 15px;
+    opacity: 0.6;
+    font-weight: bold;
+}
+
+.coffee {
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#other-obj {
+    left: 188px;
+}
+
+#other-score {
+    left: 188px;
 }
 
 .avatar-play {
@@ -163,10 +185,10 @@ hr {
     font-size: 12px;
     background-color: #dbd1de;
     color: #424242;
-    font-weight: bold;
     text-align: center;
     display: block;
     font-size: 22px;
+    border-radius: 20px;
 }
 
 #finalGame {
@@ -188,9 +210,8 @@ hr {
     height: 30px;
     border: none;
     border-radius: 15px;
-    background-color: #bd978f;
+    background-color: #90b5bd;
     color: #fff;
-    font-weight: bold;
 }
 
 #leftAvatar {
@@ -221,4 +242,33 @@ hr {
 
 #finalGame span {
     position: relative;
+}
+
+#game-over {
+    height: 100%;
+    background-color:  #e6e3e3;
+}
+
+#game-over p {
+    text-align: center;
+    font-weight: bold;
+    color: indianred;
+    padding: 30px;
+    font-size: 30px;
+}
+
+#new {
+    border: none;
+    width: 170px;
+    height: 30px;
+    border-radius: 30px;
+    position: relative;
+    left: 80px;
+    top: 250px;
+    background-color: #58db74;
+    color: #fff;
+}
+
+#img-final {
+    
 }

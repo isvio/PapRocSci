@@ -26,8 +26,14 @@
         <div id="game">
             <div class="game-info">
                 <img src="https://api.sololearn.com/Uploads/Avatars/5322116.jpg" class="avatar-play" id="vio-play"
-                    alt="viorel">
-                <img src="https://i.ibb.co/BLzTTc0/Untitled.png" class="avatar-play" id="other-play" alt="other">
+                    alt="viorel"><span id="viorel-score">0</span><span>/3</span>
+                <img src="https://i.ibb.co/BLzTTc0/Untitled.png" class="avatar-play" id="other-play" alt="other"><span
+                    id="other-score">0</span><span id="other-obj">/3</span>
+            </div>
+            <div class="coffee">
+                <span id="3">☕</span>
+                <span id="2">☕</span>
+                <span id="1">☕</span>
             </div>
             <hr>
             <div class="your-worspace hideen">
@@ -45,7 +51,13 @@
                 id="other-result"></span>
             <img src="https://api.sololearn.com/Uploads/Avatars/5322116.jpg" alt="viorel" class="avatar"
                 id="rightAvatar"><span id="viorel-result"></span><br>
-            <button id="reset">New game</button>
+            <button id="reset">Try again</button>
+        </div>
+        <div id="game-over" class="hidden">
+            <p id="message-final">Game Over</p>
+            <p id="message-final-details">You lose the game with just <span id="score-final"></span>&nbsp;points :(</p>
+            <p id="img-final">🤦‍♂️</p>
+            <button id="new">New Game</button>
         </div>
     </div>
     <script src="app.js"></script>
