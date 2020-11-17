@@ -55,11 +55,11 @@ body, html {
 }
 
 #intro p {
-    padding-top: 18px;
+    padding-top: 40px;
     font-size: 34px;
     text-align: center;
-    color: #fff;
-    height: 15%;
+    color: #424242;
+    height: 10%;
 }
 
  .players {
@@ -68,21 +68,22 @@ body, html {
 
 .text-vs {
     position: relative;
-    left: 160px;
+    left: 150px;
     font-size: 30px;
-    top: -80px;
-    color: #fff;
+    top: -20px;
+    color: #424242;
 }
 
 #start {
     position: relative;
     width: 60%;
-    height: 32px;
+    height: 30px;
     left: 20%;
     color: #fff;
-    font-size: 22px;
-    background-color:#688ba1;
+    font-size: 18px;
+    background-color:#41a1dd;
     border: none;
+    font-weight: bold;
     border-radius: 35px;
     cursor: pointer;
 }
@@ -96,14 +97,14 @@ body, html {
 }
 
 .other {
-    border: 3px solid rgb(122, 110, 110);
-    left: 30px;
-    top: 45px;
+    border: 4px dashed rgb(122, 110, 110);
+    left: 50px;
+    top: 60px;
 }
 
 #viorel {
-    top: 80px;
-    left: 130px;
+    top: 90px;
+    left: 150px;
 }
 
 /* === game workspace === */
