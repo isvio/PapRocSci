@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let otherScorePlace = document.getElementById("other-score"),
         viorelScorePlace = document.getElementById("viorel-score");
 
-    gameOverDispplay = () => {
+    gameOverDisplay = () => {
         finalGame.style.display = "none";
         document.getElementById("game-over").style.display = "block";
     }
@@ -69,11 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
         otherScore++;
         otherScorePlace.innerHTML = otherScore;
         if (otherScore === 3) {
-            gameOverDispplay();
+            gameOverDisplay();
             let mf = document.getElementById("message-final");
             let mfd = document.getElementById("message-final-details");
             mf.style.color = "#5da87b";
-            mf.innerHTML = 'You win the game!';
+            mf.innerHTML = 'You won';
             mfd.style.color = "#5da87b";
             mfd.innerHTML = 'You are very lucky';
             document.getElementById("img-final").innerHTML = '😍';
@@ -81,14 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
         viorelResult.style.color = "#a85d5d"; //red
         result.style.color = "#5da87b"; //green
         message.style.color = "#5da87b";
-        message.innerHTML = 'You win!';
-        console.log(viorelScorePlace + " " + otherScore);
+        message.innerHTML = 'You won!';
     };
 
 
-    drinkcCoffee = (coup) => {
+    drinkCoffee = (coup) => {
         if (coup === 1) {
-            gameOverDispplay();
+            gameOverDisplay();
             document.getElementById("score-final").innerHTML = otherScore;
         }
         document.getElementById(coup).style.display = "none";
@@ -97,12 +96,12 @@ document.addEventListener("DOMContentLoaded", function () {
     viorelWin = () => {
         prepareResult();
         viorelScore++;
-        drinkcCoffee(coffee--);
+        drinkCoffee(coffee--);
         viorelScorePlace.innerHTML = viorelScore;
         message.style.color = "#a85d5d";
         result.style.color = "#a85d5d";
         viorelResult.style.color = "#5da87b";
-        message.innerHTML = 'You lose!';
+        message.innerHTML = 'You lost!';
     };
 
     draw = () => {
