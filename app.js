@@ -70,14 +70,19 @@ document.addEventListener("DOMContentLoaded", function () {
         otherScorePlace.innerHTML = otherScore;
         if (otherScore === 3) {
             gameOverDispplay();
-            document.getElementById("message-final").innerHTML = 'You win the game!'
-            document.getElementById("message-final-details").innerHTML = 'You are very lucky';
+            let mf = document.getElementById("message-final");
+            let mfd = document.getElementById("message-final-details");
+            mf.style.color = "#5da87b";
+            mf.innerHTML = 'You win the game!';
+            mfd.style.color = "#5da87b";
+            mfd.innerHTML = 'You are very lucky';
             document.getElementById("img-final").innerHTML = '😍';
         }
         viorelResult.style.color = "#a85d5d"; //red
         result.style.color = "#5da87b"; //green
         message.style.color = "#5da87b";
         message.innerHTML = 'You win!';
+        console.log(viorelScorePlace + " " + otherScore);
     };
 
 
@@ -85,11 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (coup === 1) {
             gameOverDispplay();
             document.getElementById("score-final").innerHTML = otherScore;
-            console.log(otherScore);
         }
         document.getElementById(coup).style.display = "none";
     }
-
 
     viorelWin = () => {
         prepareResult();
@@ -156,8 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
         resultGame('scissors', playViorel());
         result.innerHTML = 'Scissors';
     });
-
-
 });
 
 
