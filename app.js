@@ -8,10 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let viorelScore = 0, otherScore = 0, coffee = 3;
 
-    console.log('Viorel ' + viorelScore);
-    console.log('other ' + otherScore);
-    console.log('coffee ' + coffee);
-
     document.getElementById("new").addEventListener("click", function () {
         gameOver.style.display = "none";
         game.style.display = "block";
@@ -23,12 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let coup = 1; coup <= 3; coup++) {
             document.getElementById(coup).style.display = "inline-block";
         }
-
-        console.clear();
-        console.log('\n');
-        console.log('Viorel ' + viorelScore);
-        console.log('other ' + otherScore);
-        console.log('coffee ' + coffee);
     });
 
     playViorel = () => {
@@ -85,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 mfd.innerHTML = 'You lost the game :(';
                 document.getElementById("img-final").innerHTML = '🤦‍♂️';
             }
-
         }
         if (player === 3) {
             gameOverDisplay();
@@ -106,12 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
         result.style.color = "#5da87b"; //green
         message.style.color = "#5da87b";
         message.innerHTML = 'You won!';
-
-        console.log('\n');
-        console.log('Viorel ' + viorelScore);
-        console.log('other ' + otherScore);
-        console.log('coffee ' + coffee);
-
     };
 
     drinkCoffee = (coup) => {
@@ -131,11 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
         result.style.color = "#a85d5d";
         viorelResult.style.color = "#5da87b";
         message.innerHTML = 'You lost!';
-
-        console.log('\n');
-        console.log('Viorel ' + viorelScore);
-        console.log('other ' + otherScore);
-        console.log('coffee ' + coffee);
     };
 
     draw = () => {
@@ -144,11 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
         viorelResult.style.color = "#8c918f";
         result.style.color = "#8c918f";
         message.innerHTML = 'It\'s a draw';
-
-        console.log('\n');
-        console.log('Viorel ' + viorelScore);
-        console.log('other ' + otherScore);
-        console.log('coffee ' + coffee);
     };
 
     resultGame = (player, viorel) => {
