@@ -48,7 +48,7 @@ body, html {
 
 #intro {
     height: 100%;
-    background-image: url("https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=655&q=80");
+    background-image: url("https://images.unsplash.com/photo-1545431781-3e1b506e9a37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,10 +56,12 @@ body, html {
 
 #intro p {
     padding-top: 40px;
-    font-size: 34px;
+    font-size: 30px;
     text-align: center;
     color: #424242;
+    font-weight: bold;
     height: 10%;
+    opacity: 0.8;
 }
 
  .players {
@@ -81,11 +83,12 @@ body, html {
     left: 20%;
     color: #fff;
     font-size: 18px;
-    background-color:#41a1dd;
+    background-color:#742c58;
     border: none;
     font-weight: bold;
     border-radius: 35px;
     cursor: pointer;
+    opacity: 0.7;
 }
 
 .avatar {
@@ -93,11 +96,11 @@ body, html {
     height: 100px;
     border-radius: 50%;
     position: relative;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .other {
-    border: 4px dashed rgb(122, 110, 110);
+    border: 3px dashed #742c58;
     left: 50px;
     top: 60px;
 }
@@ -127,9 +130,10 @@ body, html {
 }
 
 .coffee {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
+    opacity: 0.8;
 }
 
 #other-obj {
@@ -197,7 +201,8 @@ hr {
 }
 
 #resultGame {
-    padding: 25px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     text-align: center;
     font-size: 30px;
 }
@@ -232,7 +237,7 @@ hr {
 
 #other-result {
     top: 130px;
-    left: -75px;
+    left: -35px;
 }
 
 #viorel-result {

@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let start = document.getElementById("start");
-
-    start.addEventListener("click", function () {
+    document.getElementById("start").addEventListener("click", function () {
         document.getElementById("intro").style.display = "none";
     });
 
@@ -10,8 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let viorelScore = 0, otherScore = 0, coffee = 3;
 
-    let newGame = document.getElementById("new");
-    newGame.addEventListener("click", function () {
+    console.log('Viorel ' + viorelScore);
+    console.log('other ' + otherScore);
+    console.log('coffee ' + coffee);
+
+    document.getElementById("new").addEventListener("click", function () {
         gameOver.style.display = "none";
         game.style.display = "block";
         document.getElementById("viorel-score").innerHTML = '0';
@@ -22,11 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let coup = 1; coup <= 3; coup++) {
             document.getElementById(coup).style.display = "inline-block";
         }
+
+        console.clear();
+        console.log('\n');
+        console.log('Viorel ' + viorelScore);
+        console.log('other ' + otherScore);
+        console.log('coffee ' + coffee);
     });
 
     playViorel = () => {
         let choice = Math.floor(Math.random() * 3);
-        let result = '';
+        let result;
         if (choice === 0) {
             result = 'rock';
             viorelResult.innerHTML = 'Rock';
@@ -64,44 +71,71 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("game-over").style.display = "block";
     }
 
-    otherWin = () => {
-        prepareResult();
-        otherScore++;
-        otherScorePlace.innerHTML = otherScore;
-        if (otherScore === 3) {
+    let mf = document.getElementById("message-final");
+    let mfd = document.getElementById("message-final-details");
+
+
+    decideWinner = (viorel, player, coffee) => {
+        if (coffee === 0) {
+            if (viorel === 3 && otherScore < 3) {
+                gameOverDisplay();
+                mf.style.color = "#a85d5d";
+                mf.innerHTML = 'Game Over';
+                mfd.style.color = "#a85d5d";
+                mfd.innerHTML = 'You lost the game :(';
+                document.getElementById("img-final").innerHTML = '🤦‍♂️';
+            }
+
+        }
+        if (player === 3) {
             gameOverDisplay();
-            let mf = document.getElementById("message-final");
-            let mfd = document.getElementById("message-final-details");
             mf.style.color = "#5da87b";
             mf.innerHTML = 'You won';
             mfd.style.color = "#5da87b";
             mfd.innerHTML = 'You are very lucky';
             document.getElementById("img-final").innerHTML = '😍';
         }
+    }
+
+    otherWin = () => {
+        prepareResult();
+        otherScore++;
+        otherScorePlace.innerHTML = otherScore;
+        decideWinner(viorelScore, otherScore, coffee);
         viorelResult.style.color = "#a85d5d"; //red
         result.style.color = "#5da87b"; //green
         message.style.color = "#5da87b";
         message.innerHTML = 'You won!';
+
+        console.log('\n');
+        console.log('Viorel ' + viorelScore);
+        console.log('other ' + otherScore);
+        console.log('coffee ' + coffee);
+
     };
 
-
     drinkCoffee = (coup) => {
-        if (coup === 1) {
-            gameOverDisplay();
-            document.getElementById("score-final").innerHTML = otherScore;
+        if (coup > 0) {
+            document.getElementById(coup).style.display = "none";
+            coffee--;
         }
-        document.getElementById(coup).style.display = "none";
     }
 
     viorelWin = () => {
         prepareResult();
         viorelScore++;
-        drinkCoffee(coffee--);
+        drinkCoffee(coffee);
+        decideWinner(viorelScore, otherScore, coffee);
         viorelScorePlace.innerHTML = viorelScore;
         message.style.color = "#a85d5d";
         result.style.color = "#a85d5d";
         viorelResult.style.color = "#5da87b";
         message.innerHTML = 'You lost!';
+
+        console.log('\n');
+        console.log('Viorel ' + viorelScore);
+        console.log('other ' + otherScore);
+        console.log('coffee ' + coffee);
     };
 
     draw = () => {
@@ -110,6 +144,11 @@ document.addEventListener("DOMContentLoaded", function () {
         viorelResult.style.color = "#8c918f";
         result.style.color = "#8c918f";
         message.innerHTML = 'It\'s a draw';
+
+        console.log('\n');
+        console.log('Viorel ' + viorelScore);
+        console.log('other ' + otherScore);
+        console.log('coffee ' + coffee);
     };
 
     resultGame = (player, viorel) => {
