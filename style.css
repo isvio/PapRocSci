@@ -48,7 +48,7 @@ body, html {
 
 #intro {
     height: 100%;
-    background-image: url("https://images.unsplash.com/photo-1545431781-3e1b506e9a37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-image: url("https://images.unsplash.com/photo-1530073561301-0d4ab1aa09f7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTU2fHxibHVyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,9 +56,9 @@ body, html {
 
 #intro p {
     padding-top: 40px;
-    font-size: 30px;
+    font-size: 32px;
     text-align: center;
-    color: #424242;
+    color: #fff;
     font-weight: bold;
     height: 10%;
     opacity: 0.8;
@@ -73,7 +73,7 @@ body, html {
     left: 150px;
     font-size: 30px;
     top: -20px;
-    color: #424242;
+    color: #fff;
 }
 
 #start {
@@ -83,12 +83,11 @@ body, html {
     left: 20%;
     color: #fff;
     font-size: 18px;
-    background-color:#742c58;
+    background-color:#646d70;
     border: none;
     font-weight: bold;
     border-radius: 35px;
     cursor: pointer;
-    opacity: 0.7;
 }
 
 .avatar {
@@ -97,10 +96,11 @@ body, html {
     border-radius: 50%;
     position: relative;
     opacity: 0.8;
+    border: 3px dashed #742c58;
 }
 
 .other {
-    border: 3px dashed #742c58;
+    border: 4px dashed #742c58;
     left: 50px;
     top: 60px;
 }
