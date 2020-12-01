@@ -1,131 +1,82 @@
-/* ==== A SIMPLE CSS RESET FROM ERIC MEYER ==== */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-/* === general style === */
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 body, html {
     height: 100%;
-    font-family: sans-serif;
+    font-family: 'Merriweather', serif;
     overflow: hidden;
-}
-
-.container {
+    user-select: none;
+    margin: 0;
+	padding: 0;
+    border: 0;
+    background-color: rgb(139, 133, 133);
     height: 100%;
-}
-
-@media (min-width: 350px) {
-    .container {
-        width: 350px;
-        margin: auto;
-    }
+    background-image: url("https://images.unsplash.com/photo-1530073561301-0d4ab1aa09f7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTU2fHxibHVyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
 }
 
 .hidden {
     display: none;
 }
 
+@media (min-width: 380px) {
+
+}
+
 /* === header, intro style === */
 
-#intro {
-    height: 100%;
-    background-image: url("https://images.unsplash.com/photo-1530073561301-0d4ab1aa09f7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTU2fHxibHVyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
-#intro p {
-    padding-top: 40px;
-    font-size: 32px;
-    text-align: center;
+h1 {
     color: #fff;
-    font-weight: bold;
-    height: 10%;
-    opacity: 0.8;
-}
-
- .players {
-    height: 70%;
-}
-
-.text-vs {
-    position: relative;
-    left: 150px;
-    font-size: 30px;
-    top: -20px;
-    color: #fff;
+    margin-top: 50px;
+   
 }
 
 #start {
-    position: relative;
-    width: 60%;
-    height: 30px;
-    left: 20%;
+    position: absolute;
+    height: 45px;
+    width: 200px;
+    bottom: 200px;
+    left: calc((100vw - 200px)/2);
     color: #fff;
     font-size: 18px;
-    background-color:#646d70;
+    background-color:#6cb5ce;
     border: none;
     font-weight: bold;
-    border-radius: 35px;
+    border-radius: 20px;
     cursor: pointer;
 }
-
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: relative;
-    opacity: 0.8;
-    border: 3px dashed #742c58;
-}
-
-.other {
-    border: 4px dashed #742c58;
-    left: 50px;
-    top: 60px;
-}
-
-#viorel {
-    top: 90px;
-    left: 150px;
-}
-
 /* === game workspace === */
-
-#game {
-    height: 100%;
-    background-color: #eeeeee;
+.game-info {
+    background-color:rgba(202, 202, 218, 0.5);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    color: #fff;
+    font-weight: 800;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    z-index: 20;
 }
 
-.game-info {
-    background-color: rgb(220, 216, 224);
+.vio {
+    width: 100px;
+    float: left;
+}
+
+.player {
+    float: right;
+    position: relative;
+    right: 20px;
+
 }
 
 .game-info span {
     font-size: 18px;
     position: relative;
     bottom: 15px;
-    opacity: 0.6;
+    opacity: .9;
     font-weight: bold;
 }
 
@@ -133,7 +84,6 @@ body, html {
     padding: 12px;
     text-align: center;
     font-size: 24px;
-    opacity: 0.8;
 }
 
 #other-obj {
@@ -153,7 +103,7 @@ body, html {
 
 #other-play {
     position: relative;
-    border: 1px solid #fff;
+    border: 1px dashed #fff;
     float: right;
 }
 
@@ -177,22 +127,14 @@ hr {
 
 #your-choice {
     position: relative;
-    left: 90px;
+    left: 50px;
     top: 100px;
+    width: 280px;
 }
 
-#your-choice button {
-    border: none;
-    padding: 10px;
-    width: 150px;
-    height: 45px;
-    font-size: 12px;
-    background-color: #dbd1de;
-    color: #424242;
-    text-align: center;
-    display: block;
-    font-size: 22px;
-    border-radius: 20px;
+#your-choice span {
+    padding: 15px;
+    font-size: 50px;
 }
 
 #finalGame {

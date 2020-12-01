@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start").addEventListener("click", function () {
-        document.getElementById("intro").style.display = "none";
+        document.getElementById("title").style.display = "none";
+        document.getElementById("start").style.display = "none";
+        document.getElementById("game").style.display = "block";
     });
 
-    let viorelResult = document.getElementById("viorel-result"),
+   /*  let viorelResult = document.getElementById("viorel-result"),
         result = document.getElementById("other-result");
 
     let viorelScore = 0, otherScore = 0, coffee = 3;
@@ -56,15 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let otherScorePlace = document.getElementById("other-score"),
         viorelScorePlace = document.getElementById("viorel-score");
 
-    gameOverDisplay = () => {
+    /* ameOverDisplay = () => {
         finalGame.style.display = "none";
         document.getElementById("game-over").style.display = "block";
-    }
+    } 
 
     let mf = document.getElementById("message-final");
     let mfd = document.getElementById("message-final-details");
-
-
     decideWinner = (viorel, player, coffee) => {
         if (coffee === 0) {
             if (viorel === 3 && otherScore < 3) {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     draw = () => {
-        prepareResult();
+      //  prepareResult();
         message.style.color = "#8c918f";
         viorelResult.style.color = "#8c918f";
         result.style.color = "#8c918f";
@@ -158,18 +158,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     rock.addEventListener("click", function () {
         resultGame('rock', playViorel());
-        result.innerHTML = 'Rock';
+      //  result.innerHTML = 'Rock';
     });
 
     paper.addEventListener("click", function () {
         resultGame('paper', playViorel());
-        result.innerHTML = 'Paper';
+      //  result.innerHTML = 'Paper';
     });
 
     scissor.addEventListener("click", function () {
         resultGame('scissors', playViorel());
-        result.innerHTML = 'Scissors';
-    });
+     //   result.innerHTML = 'Scissors';
+    }); */
 });
 
 

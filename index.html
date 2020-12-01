@@ -6,46 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <meta name="author" content="Viorel Stefan">
+    <title>Game</title>
 </head>
 
 <body>
-    <div class="container">
-        <div id="intro">
-            <p>Rock paper scissors</p>
-            <div class="players">
-                <img src="https://i.ibb.co/BLzTTc0/Untitled.png" class="avatar other" alt="you"><br>
-                <span class="text-vs">vs</span>
-                <img src="https://api.sololearn.com/Uploads/Avatars/5322116.jpg" class="avatar" id="viorel"
-                    alt="viorel">
-            </div>
-
-            <div class="btn-section">
-                <button id="start">Start</button>
-            </div>
-        </div>
-        <div id="game">
-            <div class="game-info">
+    <h1 id="title">Rock paper scissors</h1>
+    <button id="start">Play</button>
+    <div id="game" class="hidden">
+        <div class="game-info">
+            <div class="vio">
                 <img src="https://api.sololearn.com/Uploads/Avatars/5322116.jpg" class="avatar-play" id="vio-play"
-                    alt="viorel"><span id="viorel-score">0</span><span>/3</span>
+                    alt="viorel">
+                    <p><span id="viorel-score">0</span>/3</p>
+
+            </div>
+            <div class="player">
                 <img src="https://i.ibb.co/BLzTTc0/Untitled.png" class="avatar-play" id="other-play" alt="other"><span
                     id="other-score">0</span><span id="other-obj">/3</span>
             </div>
-            <div class="coffee">
-                <span id="3">☕</span>
-                <span id="2">☕</span>
-                <span id="1">☕</span>
-            </div>
-            <hr>
-            <div class="your-worspace hideen">
-                <h1 class="user-name">Your choice:</h1>
-                <div id="your-choice">
-                    <button id="rock-btn">Rock</button><br>
-                    <button id="paper-btn">Paper</button><br>
-                    <button id="scissor-btn">Scissors</button><br>
-                </div>
-            </div>
         </div>
-        <div id="finalGame" class="hidden">
+        <div class="coffee">
+            <span id="3">☕</span>
+            <span id="2">☕</span>
+            <span id="1">☕</span>
+        </div>
+        <hr>
+        <div class="your-worspace">
+            <h1 class="user-name">Your choice:</h1>
+            <div id="your-choice">
+                <span id="rock-btn">✊🏻</span>
+                <span id="paper-btn">🤚🏻</span>
+                <span id="scissor-btn">✌🏻</span>
+            </div>
+
+        </div>
+        <h2>You win!</h2>
+    </div>
+
+    <!--  <div id="finalGame" class="hidden">
             <h1 id="resultGame"></h1><br>
             <img src="https://i.ibb.co/BLzTTc0/Untitled.png" alt="you" class="avatar other" id="leftAvatar"><span
                 id="other-result"></span>
@@ -53,13 +51,14 @@
                 id="rightAvatar"><span id="viorel-result"></span><br>
             <button id="reset">Try again</button>
         </div>
+
         <div id="game-over" class="hidden">
             <p id="message-final"></p>
             <p id="message-final-details"></p>
             <p id="img-final">‍</p>
             <button id="new">New Game</button>
-        </div>
-    </div>
+        </div> -->
+
     <script src="app.js"></script>
 </body>
 
