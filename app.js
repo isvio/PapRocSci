@@ -1,22 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-<<<<<<< Updated upstream
-    document.getElementById("start").addEventListener("click", function () {
-        document.getElementById("intro").style.display = "none";
-    });
-
-    let viorelResult = document.getElementById("viorel-result"),
-        result = document.getElementById("other-result");
-
-    let viorelScore = 0, otherScore = 0, coffee = 3;
-
-=======
     let viorelResult = document.getElementById("my-result"),
         result = document.getElementById("your-result"),
         myPoints = 2, yourPoints = 2, click = 1,
         gameOver = document.getElementById("game-over"),
         my = document.getElementsByClassName("my"),
         you = document.getElementsByClassName("your");
->>>>>>> Stashed changes
     document.getElementById("new").addEventListener("click", function () {
         gameOver.style.display = "none";
         game.style.display = "block";
@@ -51,31 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         game.style.display = "none";
         gameOver.style.display = "block";
     }
-<<<<<<< Updated upstream
-
-    let otherScorePlace = document.getElementById("other-score"),
-        viorelScorePlace = document.getElementById("viorel-score");
-
-    gameOverDisplay = () => {
-        finalGame.style.display = "none";
-        document.getElementById("game-over").style.display = "block";
-    }
-
-    let mf = document.getElementById("message-final");
-    let mfd = document.getElementById("message-final-details");
-
-
-    decideWinner = (viorel, player, coffee) => {
-        if (coffee === 0) {
-            if (viorel === 3 && otherScore < 3) {
-                gameOverDisplay();
-                mf.style.color = "#a85d5d";
-                mf.innerHTML = 'Game Over';
-                mfd.style.color = "#a85d5d";
-                mfd.innerHTML = 'You lost the game :(';
-                document.getElementById("img-final").innerHTML = '🤦‍♂️';
-            }
-=======
     let mf = document.getElementById("message-final"),
         mfd = document.getElementById("message-final-details"),
         img = document.getElementById("img-final"),
@@ -89,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
             img.style.color = "#a85d5d";
             mfd.innerHTML = 'You lost the game :(';
             img.innerHTML = '🤦‍♂️ (' + click + ')';
->>>>>>> Stashed changes
         }
         if (player === 4) {
             prepare();
@@ -143,11 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
         result.style.color = "#5da87b";
     };
     draw = () => {
-<<<<<<< Updated upstream
-        prepareResult();
-        message.style.color = "#8c918f";
-=======
->>>>>>> Stashed changes
         viorelResult.style.color = "#8c918f";
         result.style.color = "#8c918f";
     };
@@ -181,26 +138,17 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("rock").addEventListener("click", function () {
         resultGame('rock', playViorel());
         result.innerHTML = 'Rock';
-<<<<<<< Updated upstream
-=======
         click++;
->>>>>>> Stashed changes
     });
     document.getElementById("paper").addEventListener("click", function () {
         resultGame('paper', playViorel());
         result.innerHTML = 'Paper';
-<<<<<<< Updated upstream
-=======
         click++;
->>>>>>> Stashed changes
     });
     document.getElementById("scissor").addEventListener("click", function () {
         resultGame('scissors', playViorel());
         result.innerHTML = 'Scissors';
-<<<<<<< Updated upstream
-=======
         click++;
->>>>>>> Stashed changes
     });
 });
 
