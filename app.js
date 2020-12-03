@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+<<<<<<< Updated upstream
     document.getElementById("start").addEventListener("click", function () {
         document.getElementById("intro").style.display = "none";
     });
@@ -8,19 +9,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let viorelScore = 0, otherScore = 0, coffee = 3;
 
+=======
+    let viorelResult = document.getElementById("my-result"),
+        result = document.getElementById("your-result"),
+        myPoints = 2, yourPoints = 2, click = 1,
+        gameOver = document.getElementById("game-over"),
+        my = document.getElementsByClassName("my"),
+        you = document.getElementsByClassName("your");
+>>>>>>> Stashed changes
     document.getElementById("new").addEventListener("click", function () {
         gameOver.style.display = "none";
         game.style.display = "block";
-        document.getElementById("viorel-score").innerHTML = '0';
-        document.getElementById("other-score").innerHTML = '0';
-        viorelScore = 0;
-        otherScore = 0;
-        coffee = 3;
-        for (let coup = 1; coup <= 3; coup++) {
-            document.getElementById(coup).style.display = "inline-block";
-        }
+        my[0].style.opacity = "1";
+        you[0].style.opacity = "1";
+        my[1].style.opacity = "1";
+        you[1].style.opacity = "1";
+        my[2].style.opacity = ".2";
+        you[2].style.opacity = ".2";
+        my[3].style.opacity = ".2";
+        you[3].style.opacity = ".2";
+        myPoints = 2;
+        yourPoints = 2;
+        click = 1;
     });
-
     playViorel = () => {
         let choice = Math.floor(Math.random() * 3);
         let result;
@@ -36,22 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return result;
     }
-
-    let gameOver = document.getElementById("game-over");
-    let finalGame = document.getElementById("finalGame");
-    let game = document.getElementById("game");
-
-    document.getElementById("reset").addEventListener("click", function () {
-        finalGame.style.display = "none";
-        game.style.display = "block";
-    });
-
-    let message = document.getElementById("resultGame");
-
-    prepareResult = () => {
+    const prepare = () => {
         game.style.display = "none";
-        finalGame.style.display = "block"
+        gameOver.style.display = "block";
     }
+<<<<<<< Updated upstream
 
     let otherScorePlace = document.getElementById("other-score"),
         viorelScorePlace = document.getElementById("viorel-score");
@@ -75,55 +75,82 @@ document.addEventListener("DOMContentLoaded", function () {
                 mfd.innerHTML = 'You lost the game :(';
                 document.getElementById("img-final").innerHTML = '🤦‍♂️';
             }
+=======
+    let mf = document.getElementById("message-final"),
+        mfd = document.getElementById("message-final-details"),
+        img = document.getElementById("img-final"),
+        game = document.getElementById("game");
+    decideWinner = (viorel, player) => {
+        if (viorel === 4) {
+            prepare();
+            mf.style.color = "#a85d5d";
+            mf.innerHTML = 'Game Over';
+            mfd.style.color = "#a85d5d";
+            img.style.color = "#a85d5d";
+            mfd.innerHTML = 'You lost the game :(';
+            img.innerHTML = '🤦‍♂️ (' + click + ')';
+>>>>>>> Stashed changes
         }
-        if (player === 3) {
-            gameOverDisplay();
+        if (player === 4) {
+            prepare();
+            game.style.display = "none";
+            gameOver.style.display = "block";
             mf.style.color = "#5da87b";
             mf.innerHTML = 'You won';
             mfd.style.color = "#5da87b";
-            mfd.innerHTML = 'You are very lucky';
-            document.getElementById("img-final").innerHTML = '😍';
+            mfd.innerHTML = 'You are lucky';
+            img.style.color = "#5da87b";
+            img.innerHTML = '😍 (' + click + ')';
         }
     }
-
-    otherWin = () => {
-        prepareResult();
-        otherScore++;
-        otherScorePlace.innerHTML = otherScore;
-        decideWinner(viorelScore, otherScore, coffee);
-        viorelResult.style.color = "#a85d5d"; //red
-        result.style.color = "#5da87b"; //green
-        message.style.color = "#5da87b";
-        message.innerHTML = 'You won!';
-    };
-
-    drinkCoffee = (coup) => {
-        if (coup > 0) {
-            document.getElementById(coup).style.display = "none";
-            coffee--;
+    const trans = (x, y, p1, p2) => {
+        if (x === y) {
+            if (p1 === 1 && p2 === 0) {
+                my[2].style.opacity = "1";
+                you[1].style.opacity = ".2";
+            }
+            if (p1 === 0 && p2 === 1) {
+                my[1].style.opacity = ".2";
+                you[2].style.opacity = "1";
+            }
+        } else if (x > y) {
+            if (p1 === 0 && p2 === 1) {
+                my[2].style.opacity = ".2";
+                you[1].style.opacity = "1";
+            }
+        } else {
+            if (p1 === 1 && p2 === 0) {
+                my[1].style.opacity = "1";
+                you[2].style.opacity = ".2";
+            }
         }
     }
-
     viorelWin = () => {
-        prepareResult();
-        viorelScore++;
-        drinkCoffee(coffee);
-        decideWinner(viorelScore, otherScore, coffee);
-        viorelScorePlace.innerHTML = viorelScore;
-        message.style.color = "#a85d5d";
+        trans(myPoints, yourPoints, 1, 0);
+        myPoints++;
+        yourPoints--;
+        decideWinner(myPoints, yourPoints);
         result.style.color = "#a85d5d";
         viorelResult.style.color = "#5da87b";
-        message.innerHTML = 'You lost!';
     };
 
+    otherWin = () => {
+        trans(myPoints, yourPoints, 0, 1);
+        myPoints--;
+        yourPoints++;
+        decideWinner(myPoints, yourPoints);
+        viorelResult.style.color = "#a85d5d";
+        result.style.color = "#5da87b";
+    };
     draw = () => {
+<<<<<<< Updated upstream
         prepareResult();
         message.style.color = "#8c918f";
+=======
+>>>>>>> Stashed changes
         viorelResult.style.color = "#8c918f";
         result.style.color = "#8c918f";
-        message.innerHTML = 'It\'s a draw';
     };
-
     resultGame = (player, viorel) => {
         if (player === viorel) {
             draw();
@@ -151,24 +178,29 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
-
-    let rock = document.getElementById("rock-btn"),
-        paper = document.getElementById("paper-btn"),
-        scissor = document.getElementById("scissor-btn");
-
-    rock.addEventListener("click", function () {
+    document.getElementById("rock").addEventListener("click", function () {
         resultGame('rock', playViorel());
         result.innerHTML = 'Rock';
+<<<<<<< Updated upstream
+=======
+        click++;
+>>>>>>> Stashed changes
     });
-
-    paper.addEventListener("click", function () {
+    document.getElementById("paper").addEventListener("click", function () {
         resultGame('paper', playViorel());
         result.innerHTML = 'Paper';
+<<<<<<< Updated upstream
+=======
+        click++;
+>>>>>>> Stashed changes
     });
-
-    scissor.addEventListener("click", function () {
+    document.getElementById("scissor").addEventListener("click", function () {
         resultGame('scissors', playViorel());
         result.innerHTML = 'Scissors';
+<<<<<<< Updated upstream
+=======
+        click++;
+>>>>>>> Stashed changes
     });
 });
 
